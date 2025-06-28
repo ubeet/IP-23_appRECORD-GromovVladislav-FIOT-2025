@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Макет сайту</button><br />
+                <button class="left_buttons" onclick="change(3)">Фіксована таблична верстка</button><br />
+                <button class="left_buttons" onclick="change(4)">Гумова таблична верстка</button><br />
+                <button class="left_buttons" onclick="change(5)">Фіксована блочна верстка</button><br />
+                <button class="left_buttons" onclick="change(6)">Гумова блочна верстка</button><br />
+                <button class="left_buttons" onclick="change(7)">FLEXBOX</button><br />
+                <button class="left_buttons" onclick="change(8)">Адаптивна верстка</button><br />
+                <button class="left_buttons" onclick="change(9)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 3</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX. АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT. СТРАТЕГІЯ MOBILE FIRST.<br><br>" +
+                        "Мета:<br>" +
+                        "⎯ придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок<br>" +
+                        "⎯ придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX<br>" +
+                        "⎯ Адаптивна верстка. Медіа-запити. Медіа-типи. Медіа-функції. Метатег viewport. Інструменти розробника. Стратегія Mobile First.<br><br>";
+                    "<a href='https://github.com/ubeet/IP-23_appWEB-GromovVladislav-FIOT-2025'>Посилання на репозиторій власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appWEB-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025'>Посилання на репозиторій звітного HTML-документа</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку звітного HTML-документ</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій з самостійними роботами</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій живу сторінку з самостійними роботами</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Завдання №1: Макет сайту MovieRent</strong><br><br>" +
+                        "Було створено базовий HTML-макет веб-застосунку MovieRent із використанням семантичної структури та підключенням CSS.<br><br>" +
+                        "Основні секції сайту включають:<br>" +
+                        "• <code>&lt;header&gt;</code> з <code>&lt;nav&gt;</code> — панель навігації<br>" +
+                        "• <code>&lt;main&gt;</code>, що містить чотири секції:<br>" +
+                        "–– <code>.welcome-section</code><br>" +
+                        "–– <code>.movies-section</code><br>" +
+                        "–– <code>.rent-section</code><br>" +
+                        "–– <code>.contact-section</code><br><br>" +
+                        "Сайт підключає файл стилів <code>style.css</code> для подальшої кастомізації.<br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/1/index.html'>Посилання на макет</a><br><br>" + "<strong>Код макета:</strong><br>" +
+                        "<pre><code>&lt;header&gt;\n    &lt;nav class=&quot;navbar&quot;&gt;&lt;/nav&gt;\n&lt;/header&gt;\n\n&lt;main&gt;\n    &lt;section class=&quot;welcome-section&quot;&gt;&lt;/section&gt;\n    &lt;section class=&quot;movies-section&quot;&gt;&lt;/section&gt;\n    &lt;section class=&quot;rent-section&quot;&gt;&lt;/section&gt;\n    &lt;section class=&quot;contact-section&quot;&gt;&lt;/section&gt;\n&lt;/main&gt;</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/maket.jpg' alt='Макет' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 3:
+                    newText =
+                        "<strong>Завдання №2 — Фіксована таблична верстка</strong><br><br>" +
+                        "У цьому завданні було реалізовано табличну верстку з фіксованими розмірами.<br><br>" +
+                        "Використано тег <code>&lt;table&gt;</code> з комірками, об'єднаними за допомогою атрибутів <code>colspan</code> та <code>rowspan</code>, " +
+                        "що дозволяє створити складну структуру сторінки.<br><br>" +
+                        "Для стилізації таблиці застосовано CSS: задано точні розміри елементів, кольори фону та межі комірок. " +
+                        "Використано класи для кожної зони макета, що дозволяє зручно змінювати зовнішній вигляд окремих частин.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/fix-tab'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/fix-tab/index.html'>Посилання на живу сторінку макету</a><br><br>"
+                    "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/fixtab.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<strong>Завдання №2 — Гумова таблична верстка</strong><br><br>" +
+                        "У межах цього завдання було створено табличну верстку з адаптивною (гумовою) шириною для веб-сторінки.<br><br>" +
+                        "Основою стало використання тегу <code>&lt;table&gt;</code> із комірками, що об'єднуються за допомогою атрибутів <code>colspan</code> та <code>rowspan</code> для побудови складного макету.<br><br>" +
+                        "Для візуального оформлення було застосовано CSS, де зазначені відсоткові ширини, фонові кольори, стилі меж та відступів. " +
+                        "Кожна зона отримала окремий клас, що дозволяє легко модифікувати її вигляд без зміни структури HTML.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/gum-tab'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/gum-tab/index.html'>Посилання на живу сторінку макету</a><br><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/gumtab.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<strong>Завдання №3 — Фіксована блочна верстка</strong><br><br>" +
+                        "У цьому завданні реалізовано фіксовану блочну верстку веб-сторінки за допомогою технології CSS Grid.<br><br>" +
+                        "Розмітка побудована на основі <code>grid-template-areas</code>, де кожна зона має своє визначене місце. " +
+                        "Для досягнення стабільного вигляду макету використовувались фіксовані значення в пікселях у властивостях <code>grid-template-columns</code> та <code>grid-template-rows</code>.<br><br>" +
+                        "Таким чином, структура сторінки чітко організована, а позиціонування блоків є передбачуваним і незмінним незалежно від розміру екрана.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/fix-block'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/fix-block/index.html'>Посилання на живу сторінку макету</a><br><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/fixblock.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 6:
+                    newText =
+                        "<strong>Завдання №3 — Гумова блочна верстка</strong><br><br>" +
+                        "У цьому завданні реалізовано гумову (резинову) блочну верстку веб-сторінки з використанням CSS Grid.<br><br>" +
+                        "Розмітка побудована на основі <code>grid-template-areas</code>, з гнучкими розмірами, що задані у відсотках. " +
+                        "Це дозволяє елементам верстки змінювати свої розміри відповідно до ширини вікна браузера, зберігаючи структуру й логіку розташування блоків.<br><br>" +
+                        "Такий підхід забезпечує кращу адаптивність інтерфейсу до різних пристроїв без використання медіа-запитів.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/gum-block'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/2/gum-block/index.html'>Посилання на живу сторінку макету</a><br><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/gumblock.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+
+                case 7:
+                    newText =
+                        "<strong>Завдання №3 — FLEXBOX (Варіант 3)</strong><br><br>" +
+                        "У цьому завданні реалізовано верстку веб-сторінки з використанням технології CSS FLEXBOX.<br><br>" +
+                        "Елементи інтерфейсу згруповані в логічні секції: заголовок, навігація, основна частина та футер. " +
+                        "Flex-властивості застосовані для забезпечення гнучкого та адаптивного розташування блоків. " +
+                        "Це дозволяє елементам масштабуватися та змінювати розміщення залежно від розміру екрана користувача.<br><br>" +
+                        "Таке рішення значно покращує юзабіліті сайту та забезпечує кросбраузерну адаптацію без складної структури коду.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/3'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.1/3/index.html'>Посилання на живу сторінку макету</a><br><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/flexbox.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 8:
+                    newText =
+                        "<strong>Завдання №2 — Адаптивна верстка з медіа-запитами</strong><br><br>" +
+                        "У цьому завданні реалізовано адаптивну верстку веб-сторінки з використанням CSS медіа-запитів для трьох основних брейкпоінтів:<br>" +
+                        "- <strong>мобільна версія</strong> (до 767px)<br>" +
+                        "- <strong>планшетна версія</strong> (від 768px до 1199px)<br>" +
+                        "- <strong>десктопна версія</strong> (від 1200px)<br><br>" +
+                        "Для цього було застосовано логічні оператори <code>and</code> у поєднанні з <code>min-width</code> та <code>max-width</code>, що дозволяє точно керувати відображенням контенту.<br><br>" +
+                        "Мобільна версія має компактну структуру з вертикальним розміщенням елементів і меншими шрифтами. Планшетна версія додає відступи та покращує читабельність. Десктопна — повноцінна структура з flexbox/grid для горизонтального розміщення блоків.<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.2'>Посилання на репозиторій макету</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/3.2/index.html'>Посилання на живу сторінку макету</a><br><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/a1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/a2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/a3.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 9:
+                    newText =
+                        newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "Під час виконання лабораторної було порівняно різні підходи до верстки: табличну, блочну та адаптивну з медіа-запитами.<br><br>" +
+                        "<strong>Переваги табличної верстки:</strong> проста реалізація фіксованих структур, легше сприймається на перших етапах навчання.<br>" +
+                        "<strong>Недоліки:</strong> складна адаптація під різні пристрої, погано впливає на SEO, вважається застарілим підходом.<br><br>" +
+                        "<strong>Переваги блочної верстки (Flex/Grid):</strong> гнучкість, легка адаптація, краще розділення контенту та стилів, підтримка семантики.<br>" +
+                        "<strong>Недоліки:</strong> потребує більш глибокого розуміння CSS.<br><br>" +
+                        "У завданні №2 була реалізована <strong>адаптивна верстка за стратегією Mobile First</strong> з використанням медіа-запитів.<br>" +
+                        "- Мобільна версія: базова, компактна структура.<br>" +
+                        "- Планшетна: розширена навігація, покращене представлення контенту.<br>" +
+                        "- Десктопна: максимальна зручність, застосовано Flexbox для організації блоків.<br><br>" +
+                        "Загалом, використання адаптивної верстки підвищує зручність користування сайтом на різних пристроях і є сучасним стандартом розробки.<br><br>";
+                    break;
+
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

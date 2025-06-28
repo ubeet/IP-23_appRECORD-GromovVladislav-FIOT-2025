@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Реалізація завдання 1</button><br />
+                <button class="left_buttons" onclick="change(3)">Реалізація завдання 2</button><br />
+                <button class="left_buttons" onclick="change(4)">Скріншоти роботи</button><br />
+                <button class="left_buttons" onclick="change(5)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 5.1</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: WEB-СХОВИЩЕ. WEB STORAGE API. МОДУЛЬНОСТЬ КОДУ. СТВОРЕННЯ МОДАЛЬНОГО ВІКНА. ДЕЛЕГУВАННЯ ПОДІЙ.<br><br>" +
+                        "Мета:<br>" +
+                        "⎯ придбати практичні навички роботи зі створенням модального вікна<br>" +
+                        "⎯ повторити процес створення макету, зокрема створення макету галереї довільних зображень<br>" +
+                        "⎯ закріпити навички роботи з делегуванням подій<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.2/1'>Посилання на репозиторій завдання 1</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.2/1/index.html'>Посилання на живу сторінку завдання 1</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.2/2'>Посилання на репозиторій завдання 2</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.2/2/2-form.html'>Посилання на живу сторінку завдання 2</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Реалізація галереї зображень</strong><br><br>" +
+                        "— Створено HTML-документ з елементом <code>&lt;ul class='gallery'&gt;</code>, в який динамічно вставляються зображення з масиву об’єктів.<br>" +
+                        "— Кожен об'єкт містить preview (мале зображення), original (велике зображення) та description (опис для alt).<br>" +
+                        "— Розмітка створюється скриптом JavaScript і вставляється у DOM через innerHTML.<br>" +
+                        "— Для реалізації модального вікна використано бібліотеку <strong>basicLightbox</strong>, яка підключена через CDN.<br>" +
+                        "— Делегування подій реалізовано через прослуховувач на <code>ul.gallery</code>: по кліку на зображення відкривається модальне вікно з великою версією зображення.<br>" +
+                        "— Галерея адаптивна: стилізована через CSS так, щоб поміщалось до 6 зображень на повний екран.<br><br>";
+                    break;
+                case 3:
+                    newText =
+                        "<strong>Реалізація форми збереження</strong><br><br>" +
+                        "— Створено HTML-сторінку з формою, яка містить поля <code>email</code> та <code>message</code>, стилізовану згідно макету з Figma.<br>" +
+                        "— У JavaScript створено об’єкт <code>formData</code> з полями <code>email</code> та <code>message</code> зі значеннями за замовчуванням.<br>" +
+                        "— Реалізовано делегування подій на <code>input</code>: дані кожного поля оновлюються у <code>formData</code> та одразу зберігаються у <code>localStorage</code> з ключем <code>\"feedback-form-state\"</code>.<br>" +
+                        "— При завантаженні сторінки виконується перевірка <code>localStorage</code>: якщо є збережені дані, форма заповнюється цими значеннями без <code>undefined</code> або пробілів по краях.<br>" +
+                        "— Обробка події <code>submit</code>: якщо одне з полів не заповнене — з'являється повідомлення <code>\"Fill please all fields\"</code>.<br>" +
+                        "— Якщо всі поля заповнені — об’єкт <code>formData</code> виводиться у консоль, форма та сховище очищаються.<br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<img src='imgs/5-2-1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-3.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-4.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "У ході виконання лабораторної роботи №7 було закріплено навички роботи з локальним сховищем, обробкою подій форми та делегуванням у JavaScript. Було реалізовано збереження даних форми у <code>localStorage</code> під час введення, що дозволяє відновлювати введені значення після перезавантаження сторінки. Також обробка подій <code>input</code> та <code>submit</code> дала змогу перевіряти заповнення полів, виводити дані у консоль та очищати форму разом зі сховищем. Окремо приділено увагу відповідності макету, чистоті коду та коректності логіки збереження без появи пробілів і значення <code>undefined</code>. Результатом став зручний інтерфейс з повною відповідністю технічному завданню та демонстрацією практичного опанування теми.<br><br>";
+                    break;
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

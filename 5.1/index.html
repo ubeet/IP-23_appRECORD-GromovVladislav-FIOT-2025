@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Всі завдання</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .task {
+            background: #a0d6a0;
+            padding: 15px;
+            margin-bottom: 25px;
+            width: fit-content;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 2 — SWAP ME</h3>
+        <button onclick="swap()">SWAP ME</button>
+        <input type="text" id="input1" value="???" />
+        <input type="text" id="input2" value="!!!" />
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 4 — ЗМІНА РОЗМІРУ</h3>
+        <div id="square" style="width: 60px; height: 60px; border: 2px dashed red;"></div>
+        <button onclick="resize(-15)">Зменшити</button>
+        <button onclick="resize(15)">Збільшити</button>
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 6 — ПІДНЕСЕННЯ ДО СТЕПЕНЯ 2</h3>
+        <ul id="list">
+            <li>1</li>
+            <li>4</li>
+            <li>8</li>
+            <li>16</li>
+            <li>20</li>
+            <li>30</li>
+        </ul>
+        <button onclick="squareList()">Піднести до степеня 2</button>
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 7 — КАТЕГОРІЇ</h3>
+        <ul id="categories">
+            <li class="item">
+                <h2>Animals</h2>
+                <ul>
+                    <li>Cat</li>
+                    <li>Hamster</li>
+                    <li>Horse</li>
+                    <li>Parrot</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Products</h2>
+                <ul>
+                    <li>Bread</li>
+                    <li>Pastry</li>
+                    <li>Cheese</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Technologies</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 8 — ЛОГІН ФОРМА</h3>
+        <form class="login-form">
+            <label>Email <input type="email" name="email" /></label><br>
+            <label>Password <input type="password" name="password" /></label><br>
+            <button type="submit">Log in</button>
+        </form>
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 9 — ЗМІНА КОЛЬОРУ</h3>
+        <p>Background color: <span class="color">-</span></p>
+        <button class="change-color">Change color</button>
+    </div>
+
+    <div class="task">
+        <h3>ЗАВДАННЯ 10 — СТВОРЕННЯ/ОЧИЩЕННЯ</h3>
+        <div id="controls">
+            <input type="number" min="1" max="100" step="1" />
+            <button data-create>Create</button>
+            <button data-destroy>Destroy</button>
+        </div>
+        <div id="boxes"></div>
+    </div>
+
+    <script>
+        function swap() {
+            const a = document.getElementById('input1');
+            const b = document.getElementById('input2');
+            [a.value, b.value] = [b.value, a.value];
+        }
+
+        function resize(delta) {
+            const square = document.getElementById('square');
+            let size = parseInt(square.style.width);
+            size += delta;
+            if (size >= 15) {
+                square.style.width = size + 'px';
+                square.style.height = size + 'px';
+            }
+        }
+
+        function squareList() {
+            const items = document.querySelectorAll('#list li');
+            items.forEach(li => {
+                li.textContent = Math.pow(parseInt(li.textContent), 2);
+            });
+        }
+
+        document.querySelector('.login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.elements.email.value.trim();
+            const password = this.elements.password.value.trim();
+            if (!email || !password) {
+                alert("All form fields must be filled in.");
+                return;
+            }
+            console.log({ email, password });
+            this.reset();
+        });
+
+        document.querySelector('.change-color').addEventListener('click', () => {
+            const color = getRandomHexColor();
+            document.body.style.backgroundColor = color;
+            document.querySelector('.color').textContent = color;
+        });
+
+        function getRandomHexColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+        }
+
+        const input = document.querySelector('#controls input');
+        const boxes = document.getElementById('boxes');
+        document.querySelector('[data-create]').addEventListener('click', () => {
+            const amount = Number(input.value);
+            boxes.innerHTML = '';
+            if (amount < 0 || amount > 100) {
+                alert("All form fields must be filled in.");
+                return;
+            }
+            for (let i = 0; i < amount; i++) {
+                const div = document.createElement('div');
+                div.style.width = 30 + i * 10 + 'px';
+                div.style.height = 30 + i * 10 + 'px';
+                div.style.backgroundColor = getRandomHexColor();
+                div.style.margin = '4px';
+                boxes.appendChild(div);
+            }
+        });
+
+        document.querySelector('[data-destroy]').addEventListener('click', () => {
+            boxes.innerHTML = '';
+        });
+
+        const categories = document.querySelectorAll('#categories .item');
+        console.log(`Кількість категорій: ${categories.length}`);
+        categories.forEach(el => {
+            const title = el.querySelector('h2').textContent;
+            const count = el.querySelectorAll('ul li').length;
+            console.log(`Категорія: ${title}, Кількість елементів: ${count}`);
+        });
+    </script>
+
+</body>
+
+</html>

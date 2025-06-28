@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Опис предметної галузі</button><br />
+                <button class="left_buttons" onclick="change(3)">Структура головної сторінки</button><br />
+                <button class="left_buttons" onclick="change(4)">HTML-код таблиць</button><br />
+                <button class="left_buttons" onclick="change(5)">HTML-код зображень</button><br />
+                <button class="left_buttons" onclick="change(6)">HTML-код форм</button><br />
+                <button class="left_buttons" onclick="change(7)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 1</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: Структура HTML-документа. Вибір предметної галузі. Робота з репозиторіями. Основні теги та атрибути в HTML-документі<br><br>" +
+                        "Мета: Придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appWEB-GromovVladislav-FIOT-2025'>Посилання на репозиторій власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appWEB-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025'>Посилання на репозиторій звітного HTML-документа</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку звітного HTML-документ</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_INDEPENDENT-GromovVladislav-FIOT-2025-'>Посилання на репозиторій з самостійними роботами</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_INDEPENDENT-GromovVladislav-FIOT-2025-/index.html'>Посилання на репозиторій живу сторінку з самостійними роботами</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій з самостійними роботами</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій живу сторінку з самостійними роботами</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Опис предметної галузі: MovieRent</strong><br><br>" +
+                        "Цей документ описує предметну галузь, функціонал, бізнес-логіку та вимоги до веб-застосунку MovieRent.<br><br>" +
+                        "<strong>Предметна галузь</strong><br>" +
+                        "MovieRent — це онлайн-платформа для оренди фільмів та серіалів. Застосунок дозволяє користувачам переглядати каталог фільмів, обирати бажані до перегляду та оформлювати оренду напряму через сайт.<br><br>" +
+                        "<strong>Функціонал</strong><br>" +
+                        "Веб-застосунок MovieRent надає наступні можливості:<br>" +
+                        "<ul>" +
+                        "<li>Перегляд головної сторінки з закликом переглянути каталог.</li>" +
+                        "<li>Навігація між сторінками: 'Головна', 'Каталог', 'Оренда', 'Контакти'.</li>" +
+                        "<li>Перегляд карток фільмів з описами та постерами.</li>" +
+                        "<li>Оренда серіалів із зазначенням ціни та посиланням на трейлер.</li>" +
+                        "<li>Заповнення форми для оформлення оренди.</li>" +
+                        "<li>Отримання контактної інформації для зворотного зв'язку.</li>" +
+                        "</ul><br>" +
+                        "<strong>Бізнес-логіка</strong><br>" +
+                        "<em>Сценарій роботи користувача:</em><br>" +
+                        "<ol>" +
+                        "<li>Користувач заходить на головну сторінку та натискає на кнопку 'Переглянути каталог'.</li>" +
+                        "<li>Ознайомлюється з фільмами на сторінці 'Каталог'.</li>" +
+                        "<li>Переходить до розділу 'Оренда', обирає серіал та переглядає трейлер.</li>" +
+                        "<li>Заповнює форму з ім’ям, email та назвою фільму для оренди.</li>" +
+                        "<li>Отримує підтвердження або чекає на відповідь адміністрації.</li>" +
+                        "<li>У разі потреби звертається до підтримки через розділ 'Контакти'.</li>" +
+                        "</ol><br>" +
+                        "<strong>Функціональні вимоги</strong><br>" +
+                        "<ul>" +
+                        "<li>Меню навігації між сторінками: 'Головна', 'Каталог', 'Оренда', 'Контакти'.</li>" +
+                        "<li>Картки фільмів з назвою, описом і зображенням на сторінці 'Каталог'.</li>" +
+                        "<li>Таблиця з орендними фільмами та трейлерами на сторінці 'Оренда'.</li>" +
+                        "<li>Форма оренди з валідацією введених даних.</li>" +
+                        "<li>Контактна інформація у футері або на окремій сторінці.</li>" +
+                        "</ul><br>" +
+                        "<strong>Нефункціональні вимоги</strong><br>" +
+                        "<ul>" +
+                        "<li>Темна тема оформлення інтерфейсу.</li>" +
+                        "<li>Адаптивний дизайн для мобільних пристроїв і ПК.</li>" +
+                        "<li>Інтуїтивно зрозуміле оформлення інтерфейсу користувача.</li>" +
+                        "<li>Швидке завантаження сторінок та зображень.</li>" +
+                        "<li>Підтримка української мови як основної мови сайту.</li>" +
+                        "</ul><br>";
+                    break;
+                case 3:
+                    newText =
+                        "<strong>Структура головної сторінки</strong><br><br>" +
+                        "Головна сторінка веб-застосунку <strong>MovieRent</strong> включає:<br><br>" +
+                        "- Заголовок сайту <em>MovieRent</em><br>" +
+                        "- Навігаційне меню з розділами: «Головна», «Каталог», «Оренда», «Контакти»<br>" +
+                        "- Банер-привітання з текстом і кнопкою переходу до каталогу<br>" +
+                        "- Популярні серіали, що відображаються на головній сторінці<br>" +
+                        "- Футер із контактною інформацією<br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<strong>HTML-код таблиць</strong><br><br>" +
+                        "<strong>Теорія:</strong> Таблиці в HTML створюються за допомогою набору тегів:<br>" +
+                        "&lt;table&gt; — контейнер таблиці<br>" +
+                        "&lt;tr&gt; — рядок таблиці<br>" +
+                        "&lt;th&gt; — заголовочна комірка<br>" +
+                        "&lt;td&gt; — комірка з даними<br>" +
+                        "Також використовуються теги &lt;caption&gt; для заголовка таблиці, а атрибути <code>colspan</code> та <code>rowspan</code> дозволяють об’єднувати комірки по горизонталі та вертикалі відповідно.<br><br>" +
+                        "<strong>Код:</strong><br>" +
+                        "<pre><code>&lt;table class=&quot;table table-hover align-middle&quot;&gt;\n" +
+                        "  &lt;thead&gt;\n" +
+                        "    &lt;tr&gt;\n" +
+                        "      &lt;th&gt;Серіал&lt;/th&gt;\n" +
+                        "      &lt;th&gt;Жанр&lt;/th&gt;\n" +
+                        "      &lt;th&gt;Ціна&lt;/th&gt;\n" +
+                        "      &lt;th&gt;Трейлер&lt;/th&gt;\n" +
+                        "    &lt;/tr&gt;\n" +
+                        "  &lt;/thead&gt;\n" +
+                        "  &lt;tbody&gt;\n" +
+                        "    &lt;tr&gt;\n" +
+                        "      &lt;td&gt;Stranger Things&lt;/td&gt;\n" +
+                        "      &lt;td&gt;Містика&lt;/td&gt;\n" +
+                        "      &lt;td&gt;45 грн&lt;/td&gt;\n" +
+                        "      &lt;td&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b9EkMc79ZSU&quot; target=&quot;_blank&quot;&gt;Дивитись&lt;/a&gt;&lt;/td&gt;\n" +
+                        "    &lt;/tr&gt;\n" +
+                        "    ... (інші рядки) ...\n" +
+                        "  &lt;/tbody&gt;\n" +
+                        "&lt;/table&gt;</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/1table.jpg' alt='Таблиця з оренди серіалів' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<strong>HTML-код зображень</strong><br><br>" +
+                        "Теорія: Для відображення зображень у HTML використовується тег <code>&lt;img&gt;</code>. Основні атрибути: <code>src</code> — вказує шлях до файлу зображення, <code>alt</code> — альтернативний текст, який показується при помилці завантаження або використовується читачами з обмеженими можливостями. Додатково можна використовувати атрибути <code>class</code> або <code>style</code> для стилізації зовнішнього вигляду зображення.<br><br>" +
+                        "<strong>Код:</strong><br>" +
+                        "<code>&lt;img src='https://i.ebayimg.com/images/g/eKEAAOxyOMdS4U2W/s-l1200.jpg' class='card-img-top' alt='Breaking Bad'/&gt;</code><br><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/img1.jpg' alt='Приклад вставки зображення' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 6:
+                    newText =
+                        "<strong>HTML-код форм</strong><br><br>" +
+                        "Теорія: Форми в HTML створюються за допомогою тега <code>&lt;form&gt;</code>, який об'єднує елементи для введення даних користувачем. Основні елементи: <code>&lt;input&gt;</code> — текстові поля, <code>&lt;label&gt;</code> — мітки до полів, <code>&lt;button&gt;</code> — кнопки, <code>&lt;select&gt;</code> — випадаючі списки, <code>&lt;textarea&gt;</code> — багаторядкові текстові поля. Важливі атрибути: <code>action</code> — адреса для обробки форми, <code>method</code> — спосіб передачі (GET або POST), <code>placeholder</code> — підказка у полі, <code>required</code> — обов’язкове поле, <code>rows</code> — кількість рядків у <code>&lt;textarea&gt;</code>.<br><br>" +
+                        "<strong>Код:</strong><br>" +
+                        "<code>&lt;form&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='username'&gt;Ваше ім'я&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;input type='text' id='username' required /&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='usermail'&gt;Email&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;input type='email' id='usermail' required /&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='message'&gt;Повідомлення&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;textarea id='message' rows='4' required&gt;&lt;/textarea&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;button type='submit'&gt;Надіслати&lt;/button&gt;<br>" +
+                        "&lt;/form&gt;</code><br><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/form1.jpg' alt='Приклад форми' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+
+                case 7:
+                    newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "У результаті виконання лабораторної роботи №1 було сформовано базові навички створення веб-сторінки з використанням HTML. Під час розробки веб-застосунку <em>MovieRent</em> реалізовано структуру типового сервісу для оренди серіалів: додано таблиці, зображення, форми зворотного зв'язку та навігацію між сторінками.<br><br>" +
+                        "Здобуто практичний досвід роботи з основними тегами HTML та атрибутами, а також покращено розуміння принципів побудови семантичної структури документа. Надалі заплановано розширення функціоналу шляхом додавання стилів за допомогою CSS та інтерактивних елементів через JavaScript.<br><br>";
+                    break;
+
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

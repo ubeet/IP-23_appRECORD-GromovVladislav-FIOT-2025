@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Реалізація завдання 1</button><br />
+                <button class="left_buttons" onclick="change(3)">Реалізація завдання 2</button><br />
+                <button class="left_buttons" onclick="change(4)">Реалізація завдання 3</button><br />
+                <button class="left_buttons" onclick="change(5)">Скріншоти роботи</button><br />
+                <button class="left_buttons" onclick="change(6)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 5.1</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                         "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+    "— <strong>Тема:</strong> АСИНХРОННІСТЬ. ПРОМІСИ. HTTP-ЗАПИТИ. REST API. AJAX. КРОС-ДОМЕННІ ЗАПИТИ. ПАГІНАЦІЯ. CRUD.<br>" +
+    "— <strong>Мета:</strong> придбати практичні навички роботи зі створення промісів; опанувати методи <code>then()</code>, <code>catch()</code>, <code>finally()</code>; використовувати ланцюжки промісів та методи класу <code>Promise</code>. Ознайомитись з протоколами <code>HTTP</code> та <code>HTTPS</code>, форматами запитів, HTTP-методами та заголовками. Навчитись працювати з <code>AJAX</code> та <code>Fetch API</code>, а також взаємодіяти з публічним <code>REST API</code>.<br><br>" +
+  "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/1'>Посилання на репозиторій завдання 1</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/1/1-timer.html'>Посилання на живу сторінку завдання 1</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/2'>Посилання на репозиторій завдання 2</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/2/2-snackbar.html'>Посилання на живу сторінку завдання 2</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/3'>Посилання на репозиторій завдання 3</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/6/3/index.html'>Посилання на живу сторінку завдання 3</a><br><br>";
+                        break;
+                case 2:
+                    newText =
+    "<strong>Реалізація завдання 1</strong><br><br>" +
+    "— Було використано бібліотеку <code>flatpickr</code> для реалізації зручного вибору дати та часу у полі введення.<br>" +
+    "— Після вибору дати відбувається перевірка: якщо обрано минулу дату — виводиться повідомлення про помилку через <code>iziToast</code> та кнопка деактивується.<br>" +
+    "— У разі правильного вибору майбутньої дати кнопка старту стає активною, а при її натисканні запускається таймер зворотного відліку.<br>" +
+    "— Інтерфейс відображає кількість днів, годин, хвилин та секунд до настання обраної дати, значення оновлюються щосекунди.<br>" +
+    "— При досягненні нуля таймер зупиняється, поле вибору дати знову стає активним.<br>" +
+    "— Весь код побудований на основі <code>setInterval</code>, <code>new Date()</code> та кастомної функції <code>convertMs</code>, яка розраховує значення в мілісекундах у зрозумілі одиниці часу.<br><br>";
+  break;
+                case 3:
+                    newText =
+    "<strong>Реалізація завдання 2</strong><br><br>" +
+    "— Створено форму з полем для введення затримки (в мс), двома радіокнопками для вибору стану промісу (fulfilled/rejected) та кнопкою створення повідомлення.<br>" +
+    "— Після сабміту форми створюється проміс, який через зазначену кількість мілісекунд виконується або відхиляється залежно від вибраного стану.<br>" +
+    "— При вдалому виконанні промісу викликається повідомлення з текстом `Fulfilled promise in {ms}ms`, при відхиленні — `Rejected promise in {ms}ms`.<br>" +
+    "— Для відображення повідомлень використовується бібліотека <code>iziToast</code>, яка була підключена через CDN у HTML-файлі.<br>" +
+    "— У скрипті реалізовано обробку події <code>submit</code> форми, блокування перезавантаження сторінки та очищення полів після обробки.<br><br>";
+  break;
+  case 4:
+                    newText =
+                        "<img src='imgs/5-2-1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-3.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-4.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<img src='imgs/5-2-1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-3.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-2-4.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 6:
+                    newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "У ході виконання лабораторної роботи №7 було закріплено навички роботи з локальним сховищем, обробкою подій форми та делегуванням у JavaScript. Було реалізовано збереження даних форми у <code>localStorage</code> під час введення, що дозволяє відновлювати введені значення після перезавантаження сторінки. Також обробка подій <code>input</code> та <code>submit</code> дала змогу перевіряти заповнення полів, виводити дані у консоль та очищати форму разом зі сховищем. Окремо приділено увагу відповідності макету, чистоті коду та коректності логіки збереження без появи пробілів і значення <code>undefined</code>. Результатом став зручний інтерфейс з повною відповідністю технічному завданню та демонстрацією практичного опанування теми.<br><br>";
+                    break;
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

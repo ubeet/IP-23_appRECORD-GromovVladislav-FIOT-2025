@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лабораторна робота №4 — Адаптивна верстка</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    header, footer {
+      background-color: #222;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    aside, section, .sidebar {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 2fr;
+      }
+      .sidebar {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Лабораторна робота №4 — Адаптивна верстка</h1>
+  </header>
+
+  <nav>
+    <a href="#">Головна</a>
+    <a href="#">Про нас</a>
+    <a href="#">Контакти</a>
+  </nav>
+
+  <main class="container">
+    <aside>
+      <h2>Меню</h2>
+      <ul>
+        <li><a href="#">Посилання 1</a></li>
+        <li><a href="#">Посилання 2</a></li>
+      </ul>
+    </aside>
+
+    <section>
+      <h2>Тема та мета</h2>
+      <p><strong>Тема:</strong> Адаптивна верстка з використанням медіа-запитів.</p>
+      <p><strong>Мета:</strong> Освоїти навички створення адаптивного дизайну під різні пристрої.</p>
+
+      <h2>Опис реалізації</h2>
+      <p>У даній роботі реалізовано адаптивну сітку за допомогою CSS Grid. Для десктопної версії застосовано три колонки (лівий блок, контент, правий блок), для планшетів — дві колонки, а для мобільної — одна.</p>
+      <p>Логічні оператори (наприклад, <code>and</code>, <code>max-width</code>) були використані для налаштування відповідної адаптації на різних екранах.</p>
+    </section>
+
+    <div class="sidebar">
+      <h2>Додатково</h2>
+      <p>Це права колонка, яка зникає на планшетах і телефонах.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; footer</p>
+  </footer>
+
+</body>
+</html>

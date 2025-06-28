@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання JS (2, 4, 6, 7)</title>
+</head>
+<body>
+  <h1>Завдання JavaScript</h1>
+
+  <h2>Завдання 2 — Чи є в масиві людина молодша за 20?</h2>
+  <button onclick="checkAge()">Перевірити</button>
+  <pre id="task2"></pre>
+
+  <h2>Завдання 4 — Квадрати чисел</h2>
+  <button onclick="squareNumbers()">Обчислити квадрати</button>
+  <pre id="task4"></pre>
+
+  <h2>Завдання 6 — Сортування користувачів за віком</h2>
+  <button onclick="sortUsers()">Сортувати</button>
+  <pre id="task6"></pre>
+
+  <h2>Завдання 7 — Калькулятор з ланцюжком</h2>
+  <button onclick="runCalculator()">Порахувати</button>
+  <pre id="task7"></pre>
+
+  <script>
+    const people = [
+      { name: 'John', age: 27 },
+      { name: 'Jane', age: 31 },
+      { name: 'Bob', age: 19 },
+    ];
+
+    function checkAge() {
+      const hasUnder20 = people.some(person => person.age < 20);
+      document.getElementById("task2").textContent = "Є молодші за 20? → " + hasUnder20;
+    }
+
+    const numbers = [1, 2, 3, 4, 5];
+
+    function squareNumbers() {
+      const squares = numbers.map(n => n * n);
+      document.getElementById("task4").textContent = JSON.stringify(squares, null, 2);
+    }
+
+    const users = [
+      { name: 'John', age: 27 },
+      { name: 'Jane', age: 31 },
+      { name: 'Bob', age: 19 },
+    ];
+
+    function sortUsers() {
+      const sorted = [...users].sort((a, b) => a.age - b.age);
+      document.getElementById("task6").textContent = JSON.stringify(sorted, null, 2);
+    }
+
+    class Calculator {
+      number(value) {
+        this.value = value;
+        return this;
+      }
+
+      add(val) {
+        this.value += val;
+        return this;
+      }
+
+      subtract(val) {
+        this.value -= val;
+        return this;
+      }
+
+      multiply(val) {
+        this.value *= val;
+        return this;
+      }
+
+      divide(val) {
+        if (val === 0) throw new Error("Ділення на 0 заборонено");
+        this.value /= val;
+        return this;
+      }
+
+      getResult() {
+        return this.value;
+      }
+    }
+
+    function runCalculator() {
+      try {
+        const calc = new Calculator();
+        const result = calc
+          .number(10)
+          .add(5)
+          .subtract(3)
+          .multiply(4)
+          .divide(2)
+          .getResult();
+
+        document.getElementById("task7").textContent = "Результат обчислень: " + result;
+      } catch (e) {
+        document.getElementById("task7").textContent = "Помилка: " + e.message;
+      }
+    }
+  </script>
+</body>
+</html>

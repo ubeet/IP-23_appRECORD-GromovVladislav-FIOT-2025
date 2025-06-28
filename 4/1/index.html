@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання з JavaScript</title>
+</head>
+<body>
+  <h1>Виконані завдання</h1>
+
+  <h2>Завдання 2 – getProductDetails</h2>
+  <button onclick="testProductDetails2()">Перевірити товар ID: 2</button>
+  <button onclick="testProductDetails4()">Перевірити товар ID: 4</button>
+  <pre id="task2"></pre>
+
+  <h2>Завдання 4 – Фільтрація концертів</h2>
+  <pre id="task4"></pre>
+
+  <h2>Завдання 6 – Знижки на медикаменти</h2>
+  <pre id="task6"></pre>
+
+  <h2>Завдання 8 – Клас Storage</h2>
+  <pre id="task8"></pre>
+
+  <h2>Завдання 9 – Підрахунок тегів</h2>
+  <pre id="task9"></pre>
+
+  <h2>Завдання 10 – Перевірка дужок</h2>
+  <button onclick="testBrackets()">Перевірити код</button>
+  <pre id="task10"></pre>
+
+  <script>
+    function getProductDetails(productId, successCallback, errorCallback) {
+      const products = {
+        1: { id: 1, name: "Ноутбук", price: 15000 },
+        2: { id: 2, name: "Смартфон", price: 8000 },
+        3: { id: 3, name: "Навушники", price: 1500 },
+      };
+      const product = products[productId];
+      product ? successCallback(product) : errorCallback("Товар не знайдено");
+    }
+
+    function testProductDetails2() {
+      getProductDetails(2,
+        (data) => document.getElementById("task2").textContent = JSON.stringify(data, null, 2),
+        (error) => document.getElementById("task2").textContent = error
+      );
+    }
+
+    function testProductDetails4() {
+      getProductDetails(4,
+        (data) => document.getElementById("task2").textContent = JSON.stringify(data, null, 2),
+        (error) => document.getElementById("task2").textContent = error
+      );
+    }
+
+    const concerts = {
+      Київ: new Date("2020-04-01"),
+      Умань: new Date("2025-07-02"),
+      Вінниця: new Date("2020-04-21"),
+      Одеса: new Date("2025-03-15"),
+      Хмельницький: new Date("2020-04-18"),
+      Харків: new Date("2025-07-10"),
+    };
+
+    const result4 = Object.entries(concerts)
+      .filter(([_, date]) => date > new Date())
+      .sort((a, b) => a[1] - b[1])
+      .map(([city]) => city);
+
+    document.getElementById("task4").textContent = JSON.stringify(result4, null, 2);
+
+    const medicines = [
+      { name: "Noshpa", price: 170 },
+      { name: "Analgin", price: 55 },
+      { name: "Quanil", price: 310 },
+      { name: "Alphacholine", price: 390 },
+    ];
+
+    const applyDiscount = (items) =>
+      items.map((item, index) => ({
+        id: index + 1,
+        name: item.name,
+        price: item.price > 300 ? item.price * 0.7 : item.price,
+      }));
+
+    document.getElementById("task6").textContent = JSON.stringify(applyDiscount(medicines), null, 2);
+
+    function Storage(initialItems) {
+      this.items = initialItems;
+
+      this.getItems = () => this.items;
+      this.addItem = (item) => this.items.push(item);
+      this.removeItem = (item) => {
+        const index = this.items.indexOf(item);
+        if (index !== -1) this.items.splice(index, 1);
+      };
+    }
+
+    const store = new Storage(["apple", "banana", "mango"]);
+    store.addItem("grape");
+    store.removeItem("banana");
+
+    document.getElementById("task8").textContent = JSON.stringify(store.getItems(), null, 2);
+
+    const tweets = [
+      { id: "000", likes: 5, tags: ["js", "nodejs"] },
+      { id: "001", likes: 2, tags: ["html", "css"] },
+      { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+      { id: "003", likes: 8, tags: ["css", "react"] },
+      { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+    ];
+
+    const tagStats = tweets
+      .flatMap((tweet) => tweet.tags)
+      .reduce((acc, tag) => {
+        acc[tag] = (acc[tag] || 0) + 1;
+        return acc;
+      }, {});
+
+    document.getElementById("task9").textContent = JSON.stringify(tagStats, null, 2);
+
+    function checkBrackets(str) {
+      const stack = [];
+      const pairs = { ")": "(", "]": "[", "}": "{" };
+
+      for (let char of str) {
+        if ("([{".includes(char)) {
+          stack.push(char);
+        } else if (")]}".includes(char)) {
+          if (stack.pop() !== pairs[char]) return false;
+        }
+      }
+      return stack.length === 0;
+    }
+
+    function testBrackets() {
+      const code = "function test() { return [1, 2, 3]; }";
+      const result = checkBrackets(code);
+      document.getElementById("task10").textContent = `Код: ${code}\nРезультат: ${result}`;
+    }
+  </script>
+</body>
+</html>

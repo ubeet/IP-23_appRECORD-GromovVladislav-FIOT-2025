@@ -1,0 +1,71 @@
+body {
+  background: #111;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.gallery__item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Loader (css-loader) */
+.loader {
+  border: 6px solid #333;
+  border-top: 6px solid #09f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

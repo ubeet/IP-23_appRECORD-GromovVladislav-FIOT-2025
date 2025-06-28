@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Способи підключення стилів</button><br />
+                <button class="left_buttons" onclick="change(3)">Селектори тегу</button><br />
+                <button class="left_buttons" onclick="change(4)">Селектори класів</button><br />
+                <button class="left_buttons" onclick="change(5)">Селектори ідентифікаторів</button><br />
+                <button class="left_buttons" onclick="change(6)">Інші селектори</button><br />
+                <button class="left_buttons" onclick="change(7)">CSS</button><br />
+                <button class="left_buttons" onclick="change(8)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 2</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: <em>Каскадні таблиці стилів. Селектори. Ідентифікатори. Стильове оформлення текстових елементів в HTML-документах</em><br><br>" +
+                        "Мета: придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appWEB-GromovVladislav-FIOT-2025'>Посилання на репозиторій власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appWEB-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку власного WEB-застосунку</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025'>Посилання на репозиторій звітного HTML-документа</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/index.html'>Посилання на репозиторій на живу сторінку звітного HTML-документ</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій з самостійними роботами</a><br><br>" +
+                        "<a href='#'>Посилання на репозиторій живу сторінку з самостійними роботами</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Способи підключення стилів</strong><br><br>" +
+                        "Теорія: Існує три основні способи підключення CSS-стилів у HTML-документах:<br><br>" +
+                        "<ul>" +
+                        "<li><strong>Вбудовані стилі (inline styles)</strong> — задаються безпосередньо в атрибуті <code>style</code> кожного окремого елемента. Застосовуються для швидкого тестування або виняткових випадків.</li>" +
+                        "<li><strong>Внутрішні стилі (internal styles)</strong> — оголошуються у блоці <code>&lt;style&gt;</code> в секції <code>&lt;head&gt;</code> HTML-документа. Підходять для невеликих проектів або сторінок з унікальним стилем.</li>" +
+                        "<li><strong>Зовнішні стилі (external styles)</strong> — підключаються через тег <code>&lt;link&gt;</code> до окремого CSS-файлу. Найкращий варіант для великих проектів, де потрібно розділити структуру та стилізацію.</li>" +
+                        "</ul><br>" +
+                        "Код:<br><br>" +
+                        "&lt;!-- Вбудований стиль --&gt;<br>" +
+                        "&lt;p style='color: blue; font-size: 16px;'&gt;Текст з вбудованим стилем&lt;/p&gt;<br><br>" +
+                        "&lt;!-- Внутрішній стиль --&gt;<br>" +
+                        "&lt;head&gt;<br>" +
+                        "  &nbsp;&lt;style&gt;<br>" +
+                        "  &nbsp;&nbsp;&nbsp;&nbsp;body { background-color: #f8f9fa; }<br>" +
+                        "  &nbsp;&lt;/style&gt;<br>" +
+                        "&lt;/head&gt;<br><br>" +
+                        "&lt;!-- Зовнішній стиль --&gt;<br>" +
+                        "&lt;head&gt;<br>" +
+                        "  &nbsp;&lt;link rel='stylesheet' href='styles.css' /&gt;<br>" +
+                        "&lt;/head&gt;<br><br>" +
+                        "Скріншот:<br>";
+                    break;
+                case 3:
+                    newText =
+                        "<strong>Селектори тегу</strong><br><br>" +
+                        "Теорія: Селектор тегу застосовується до всіх елементів певного типу. Наприклад, <code>body</code> стилізує всю сторінку, а <code>table</code> — всі таблиці.<br><br>" +
+                        "Код:<br>" +
+                        "<pre><code>body {\n" +
+                        "    background-color: #121212;\n" +
+                        "    color: #ffffff;\n" +
+                        "    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
+                        "    margin: 0;\n" +
+                        "    padding: 0;\n" +
+                        "}\n\n" +
+                        "table {\n" +
+                        "    background-color: #1e1e1e;\n" +
+                        "}</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/1table.jpg' alt='Таблиця з оренди серіалів' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<strong>Селектори класів</strong><br><br>" +
+                        "Теорія: Селектор класу застосовується до елементів із заданим атрибутом <code>class</code>. Його можна використовувати для стилізації кількох елементів одночасно, не залежно від їхнього тегу.<br><br>" +
+                        "Код:<br>" +
+                        "<pre><code>.table td .card {\n" +
+                        "    height: 100%;\n" +
+                        "    display: flex;\n" +
+                        "    flex-direction: column;\n" +
+                        "}\n\n" +
+                        ".table td .card-img-top {\n" +
+                        "    height: 70%;\n" +
+                        "    object-fit: cover;\n" +
+                        "}</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/img1.jpg' alt='Приклад вставки зображення' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<strong>Селектори ідентифікаторів</strong><br><br>" +
+                        "Теорія: Селектор ідентифікатора використовується для стилізації елемента з унікальним атрибутом <code>id</code>. Він починається з символу <code>#</code> і застосовується тільки до одного конкретного елемента на сторінці. Це зручно, коли потрібно виділити заголовок, секцію або інший окремий блок.<br><br>" +
+                        "Код:<br>" +
+                        "<pre><code>#contacts {\n" +
+                        "    color: #ffffff;\n" +
+                        "    text-align: center;\n" +
+                        "    font-size: 2.5rem;\n" +
+                        "    margin-bottom: 20px;\n" +
+                        "}</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/con2.jpg' alt='Приклад вставки зображення' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 6:
+                    newText =
+                        "<strong>HTML-код форм</strong><br><br>" +
+                        "Теорія: Форми в HTML створюються за допомогою тега <code>&lt;form&gt;</code>, який об'єднує елементи для введення даних користувачем. Основні елементи: <code>&lt;input&gt;</code> — текстові поля, <code>&lt;label&gt;</code> — мітки до полів, <code>&lt;button&gt;</code> — кнопки, <code>&lt;select&gt;</code> — випадаючі списки, <code>&lt;textarea&gt;</code> — багаторядкові текстові поля. Важливі атрибути: <code>action</code> — адреса для обробки форми, <code>method</code> — спосіб передачі (GET або POST), <code>placeholder</code> — підказка у полі, <code>required</code> — обов’язкове поле, <code>rows</code> — кількість рядків у <code>&lt;textarea&gt;</code>.<br><br>" +
+                        "<strong>Код:</strong><br>" +
+                        "<code>&lt;form&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='username'&gt;Ваше ім'я&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;input type='text' id='username' required /&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='usermail'&gt;Email&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;input type='email' id='usermail' required /&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;label for='message'&gt;Повідомлення&lt;/label&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;textarea id='message' rows='4' required&gt;&lt;/textarea&gt;<br>" +
+                        "&nbsp;&nbsp;&lt;button type='submit'&gt;Надіслати&lt;/button&gt;<br>" +
+                        "&lt;/form&gt;</code><br><br>" +
+                        "<strong>Скріншот:</strong><br>" +
+                        "<img src='imgs/form1.jpg' alt='Приклад форми' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+
+                case 7:
+                    newText =
+                        "<strong>CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки</strong><br><br>" +
+                        "Теорія: У вебзастосунку MovieRent активно використовуються CSS-властивості для оформлення інтерфейсу. Стилі застосовуються до тексту, фону, таблиць, форм, кнопок і карточок серіалів. Вони створюють темну естетику, зручну для користувача.<br><br>" +
+                        "Код:<br>" +
+                        "<pre><code>body {\n" +
+                        "    font-family: 'Roboto', sans-serif;\n" +
+                        "    background-color: #121212;\n" +
+                        "    color: #e0e0e0;\n" +
+                        "}\n\n" +
+                        "table {\n" +
+                        "    background-color: #1f1f1f;\n" +
+                        "    color: #e0e0e0;\n" +
+                        "    border: 1px solid #333;\n" +
+                        "}\n\n" +
+                        ".card-title {\n" +
+                        "    color: #00bcd4;\n" +
+                        "}\n\n" +
+                        ".btn-info:hover {\n" +
+                        "    background-color: #0097a7;\n" +
+                        "}</code></pre><br>" +
+                        "<strong>Скріншот:</strong><br><br>" +
+                        "<img src='imgs/css2.jpg' alt='Приклад css' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 8:
+                    newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "У процесі виконання лабораторної роботи №2 було опрацьовано способи підключення та застосування каскадних таблиць стилів у проєкті <strong>MovieRent</strong>.<br><br>" +
+                        "Освоєно використання селекторів за тегами, класами та ідентифікаторами, а також оформлення елементів інтерфейсу: тексту, таблиць, форм, кнопок та карточок.<br><br>" +
+                        "Вебзастосунок отримав сучасне темне оформлення з адаптивними стилями, що підвищує зручність користування.<br><br>" +
+                        "Надалі планується розширення функціоналу за допомогою JavaScript.<br><br>";
+                    break;
+
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

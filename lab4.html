@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Реалізація завдання 1</button><br />
+                <button class="left_buttons" onclick="change(3)">Реалізація завдання 2</button><br />
+                <button class="left_buttons" onclick="change(4)">Скріншоти роботи</button><br />
+                <button class="left_buttons" onclick="change(5)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 4</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ. ПЕРЕБИРАЮЧІ МЕТОДИ МАСИВУ.<br><br>" +
+                        "Мета:<br>" +
+                        "⎯ придбати практичні навички роботи з об'єктами, методами об'єкта, масивами об'єктів<br>" +
+                        "⎯ закріпити знання про callback-функції та стрілочні функції<br>" +
+                        "⎯ навчитися використовувати стрілочні функції як колбеки<br>" +
+                        "⎯ реалізовувати перебираючі методи масиву на практиці засобами мови JavaScript<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/4/1'>Посилання на репозиторій завдання 1</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/4/1/index.html'>Посилання на живу сторінку завданя 1</a><br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/4/2'>Посилання на репозиторій завдання 2</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/4/2/index.html'>Посилання на живу сторінку завдання 2</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Реалізація завдання 1</strong><br><br>" +
+                        "<u><strong>Опис виконаних завдань:</strong></u><br><br>" +
+                        "<b>Завдання 2:</b> Створено масив об'єктів з полем <code>age</code>. За допомогою методу <code>some()</code> перевірено, чи існує хоча б одна людина з віком менше 20 років. Результат: <code>true</code> або <code>false</code>.<br><br>" +
+                        "<b>Завдання 4:</b> Створено об'єкт із містами та датами концертів. Використано <code>Object.entries()</code>, <code>filter()</code>, <code>sort()</code> та <code>map()</code> для отримання масиву тільки тих міст, де концерти ще не відбулися, у хронологічному порядку.<br><br>" +
+                        "<b>Завдання 6:</b> Опрацьовано масив медикаментів: для кожного об'єкта з ціною понад 300 грн застосовано знижку 30%. Кожному елементу надано унікальний <code>id</code>. Використано метод <code>map()</code>.<br><br>" +
+                        "<b>Завдання 8:</b> Реалізовано клас <code>Storage</code>, який зберігає список товарів та дозволяє: отримувати масив товарів (<code>getItems()</code>), додавати новий товар (<code>addItem()</code>), видаляти існуючий товар (<code>removeItem()</code>).<br><br>" +
+                        "<b>Завдання 9:</b> Створено масив твітів з тегами. За допомогою <code>flatMap()</code> та <code>reduce()</code> сформовано об'єкт, де ключ — назва тега, значення — кількість його використань у твіттері. Результат: об'єкт зі статистикою тегів.<br><br>" +
+                        "<b>Завдання 10:</b> Написано функцію <code>checkBrackets()</code>, яка перевіряє баланс дужок (), [], {} у рядку. Використано стек для контролю відкритих та закритих дужок. Функція повертає <code>true</code> або <code>false</code> залежно від правильності.<br><br>";
+                    break;
+                case 3:
+                    newText =
+                        "<strong>Реалізація завдання 2</strong><br><br>" +
+                        "<u><strong>Опис виконаних завдань:</strong></u><br><br>" +
+                        "<b>Завдання 2:</b> Перевірено, чи є в масиві людей хоча б одна з віком менше 20 років. Для цього використано метод <code>some()</code>, який повертає <code>true</code> або <code>false</code> залежно від умови.<br><br>" +
+                        "<b>Завдання 4:</b> Створено масив чисел [1, 2, 3, 4, 5]. За допомогою методу <code>map()</code> згенеровано новий масив, де кожен елемент піднесено до квадрату. Результат: [1, 4, 9, 16, 25].<br><br>" +
+                        "<b>Завдання 6:</b> Масив об'єктів із властивостями <code>name</code> та <code>age</code> відсортовано за зростанням віку користувачів. Використано метод <code>sort()</code> з колбеком.<br><br>" +
+                        "<b>Завдання 7:</b> Створено клас <code>Calculator</code> з методами <code>number()</code>, <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, <code>divide()</code>, <code>getResult()</code>. Кожен метод (крім <code>getResult()</code>) повертає <code>this</code> для підтримки ланцюжкових викликів (method chaining).<br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<img src='imgs/4-1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/4-2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 5:
+                    newText =
+                        "<strong>Висновок</strong><br><br>" +
+                        "У процесі виконання завдань було опрацьовано ключові можливості мови JavaScript для роботи з об'єктами, масивами, класами та функціями. " +
+                        "Здобуто практичні навички використання таких методів масивів як <code>map</code>, <code>reduce</code>, <code>sort</code>, <code>some</code>, " +
+                        "а також реалізовано роботу з об'єктами, включаючи деструктуризацію, обробку даних, використання callback-функцій та стрілочних функцій.<br><br>" +
+                        "Особливу увагу було приділено створенню класів з інкапсульованою логікою та підтримкою ланцюжкових викликів, а також реалізації алгоритму перевірки дужок з використанням структури стек.<br><br>";
+                    break;
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Звіт до лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="zvit.css" />
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div>
+            <h4>ЗВІТ ДО ЛАБОРАТОРНИХ РОБІТ</h4>
+            <h4>З ДИСЦИПЛІНИ "ІНТЕРНЕТ ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h4>
+            <p>Студента групи ІП-23 Громов Владислав</p>
+        </div>
+        <img src="images/фото_студента.jpg" alt="Фото студента" />
+    </div>
+
+    <div class="content">
+        <form>
+            <div class="top-buttons">
+                <button class="buttons"><a href="lab1.html">Лабораторна №1</a></button>
+                <button class="buttons"><a href="lab2.html">Лабораторна №2</a></button>
+                <button class="buttons"><a href="lab3.html">Лабораторна №3</a></button>
+                <button class="buttons"><a href="lab4.html">Лабораторна №4</a></button>
+                <button class="buttons"><a href="lab5.1.html">Лабораторна №5.1</a></button>
+                <button class="buttons"><a href="lab5.2.html">Лабораторна №5.2</a></button>
+                <button class="buttons"><a href="lab6.html">Лабораторна №6</a></button>
+            </div>
+        </form>
+
+        <div class="container">
+            <div>
+                <button class="left_buttons" onclick="change(1)">Тема, мета, місце розташування</button><br />
+                <button class="left_buttons" onclick="change(2)">Реалізація завдання</button><br />
+                <button class="left_buttons" onclick="change(3)">Скріншоти роботи</button><br />
+                <button class="left_buttons" onclick="change(4)">Висновки</button><br />
+            </div>
+
+            <form>
+                <fieldset class="main_form">
+                    <p id="shown">
+                        <strong>Лабораторна 5.1</strong><br /><br />
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function change(button_number) {
+            switch (button_number) {
+                case 1:
+                    newText =
+                        "<strong>Тема, мета, місце розташування проекту</strong><br><br>" +
+                        "Тема: КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ. THROTTLE.<br><br>" +
+                        "Мета:<br>" +
+                        "⎯ придбати практичні навички роботи з об'єктами<br>" +
+                        "⎯ методами об'єкта, callback, стрілочними функціями<br>" +
+                        "⎯ реалізувати завдання з використанням подій і DOM-навігації<br><br>" +
+                        "<a href='https://github.com/ubeet/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.1'>Посилання на репозиторій завдання</a><br><br>" +
+                        "<a href='https://ubeet.github.io/IP-23_appRECORD-GromovVladislav-FIOT-2025/5.1/index.html'>Посилання на живу сторінку завдання</a><br><br>";
+                    break;
+                case 2:
+                    newText =
+                        "<strong>Реалізація завдання 1</strong><br><br>" +
+                        "— Завдання 2: реалізовано обмін значеннями між двома інпутами після натискання кнопки.<br>" +
+                        "— Завдання 4: кнопки змінюють розмір квадрата — \"Зменшити\" та \"Збільшити\" змінюють розмір на ±15px.<br>" +
+                        "— Завдання 6: значення списку підносяться до квадрату при кожному натисканні кнопки.<br>" +
+                        "— Завдання 7: скрипт виводить у консоль кількість категорій та кількість елементів у кожній за допомогою DOM.<br><br>" +
+                        "— Завдання 8: логін-форма перевіряє, чи заповнені поля, виводить дані у консоль та очищає інпути.<br>" +
+                        "— Завдання 9: зміна кольору фону body та виведення значення кольору у span після натискання кнопки.<br>" +
+                        "— Завдання 10: створення колекції кольорових div-елементів заданої кількості та їх очищення кнопкою Destroy.<br><br>";
+                    break;
+                case 3:
+                    newText =
+                        "<img src='imgs/5-1-1.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>" +
+                        "<img src='imgs/5-1-2.jpg' alt='' style='max-width:100%; border:1px solid #ccc; border-radius:8px; margin-top:10px;' /><br><br>";
+                    break;
+                case 4:
+                    newText =
+                        "<strong>Висновки</strong><br><br>" +
+                        "Під час виконання лабораторної роботи було закріплено навички роботи з DOM, подіями та делегуванням у JavaScript.<br><br>" +
+                        "Реалізовано інтерактивні елементи: форма входу, генератор кольорів, таймер зворотного відліку, зміна розміру, swap-поля, створення та очищення блоків.<br><br>" +
+                        "Отримано практику використання стрілочних функцій, callback-ів, роботи з <code>event.target</code> та обробки подій через делегування.<br><br>" +
+                        "Результатом стала адаптивна HTML-сторінка зі зручним динамічним звітом, яка демонструє засвоєння основ JS і вміння оформлювати результати у вигляді зручного інтерфейсу.<br><br>";
+                    break;
+
+            }
+            document.getElementById("shown").innerHTML = newText;
+        }
+    </script>
+</body>
+
+</html>
